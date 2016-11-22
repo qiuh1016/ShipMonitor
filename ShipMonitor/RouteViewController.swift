@@ -42,7 +42,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     func initView() {
         
         let center = CLLocationCoordinate2D(latitude: 29.84159, longitude: 122.409472)
-        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
         

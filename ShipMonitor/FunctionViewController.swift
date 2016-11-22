@@ -44,7 +44,7 @@ class FunctionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = function[indexPath.row]
+        cell.textLabel?.text = function[indexPath.row].uppercased()
         return cell
     }
     
@@ -53,6 +53,8 @@ class FunctionViewController: UITableViewController {
         switch function[indexPath.row] {
         case "Display Route":
             performSegue(withIdentifier: "routeSegue", sender: nil)
+        case "Controller Info":
+            performSegue(withIdentifier: "controllerSegue", sender: nil)
         case "Ship Info":
             performSegue(withIdentifier: "shipInfoSegue", sender: nil)
         default:

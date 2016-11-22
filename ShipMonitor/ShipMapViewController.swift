@@ -37,6 +37,8 @@ class ShipMapViewController: UIViewController, MKMapViewDelegate {
     
     func initView() {
         searchButton.layer.cornerRadius = 18.5
+        searchButton.layer.borderColor = UIColor.lightGray.cgColor
+        searchButton.layer.borderWidth = 1 / 2
         //searchButton.layer.masksToBounds = true
         
         mapView.showsUserLocation = true
@@ -74,13 +76,13 @@ class ShipMapViewController: UIViewController, MKMapViewDelegate {
             let myAnnotation = annotation as! MyAnnotation
             switch myAnnotation.type {
             case .start:
-                view?.image = UIImage(named: "map_icon_start");
+                view?.image = UIImage(named: "map_icon_start")
             case .end:
-                view?.image = UIImage(named: "map_icon_end");
+                view?.image = UIImage(named: "map_icon_end")
             case .point:
-                view?.image = UIImage(named: "map_icon_point");
+                view?.image = UIImage(named: "ship_icon_blue_fill_shadow") //UIImage(named: "map_icon_point")
             }
-            view?.centerOffset = CGPoint(x: 0, y: -(view!.frame.size.height * 0.5));
+//            view?.centerOffset = CGPoint(x: 0, y: -(view!.frame.size.height * 0.5));
             view?.canShowCallout = true;
             return view
         }
