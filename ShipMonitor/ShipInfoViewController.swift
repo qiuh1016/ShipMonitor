@@ -43,14 +43,33 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return infoName.count
+        return expandedCell == nil ? infoName.count : infoName.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        let label = cell?.viewWithTag(100) as! UILabel
-        label.text = infoName[indexPath.row]
-        return cell!
+        if expandedCell == nil {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+            let label = cell?.viewWithTag(100) as! UILabel
+            label.text = infoName[indexPath.row]
+            return cell!
+        } else {
+            if indexPath.row < expandedCell!.row + 1 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+                let label = cell?.viewWithTag(100) as! UILabel
+                label.text = infoName[indexPath.row]
+                return cell!
+            } else if indexPath.row > expandedCell!.row + 1{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+                let label = cell?.viewWithTag(100) as! UILabel
+                label.text = infoName[indexPath.row - 1]
+                return cell!
+            } else {
+                //info cell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "basicInfoCell")
+                return cell!
+            }
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -60,15 +79,36 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
             rotateImage(tableView: tableView, indexPath: indexPath)
             expandedCell = indexPath
         } else {
-            if expandedCell == indexPath {
-                rotateImage(tableView: tableView, indexPath: indexPath)
-                expandedCell = nil
-            } else {
+            if indexPath.row < expandedCell!.row {
                 rotateImage(tableView: tableView, indexPath: indexPath)
                 rotateImage(tableView: tableView, indexPath: expandedCell!)
                 expandedCell = indexPath
+            } else if indexPath.row == expandedCell!.row {
+                rotateImage(tableView: tableView, indexPath: expandedCell!)
+                expandedCell = nil
+            } else if indexPath.row == expandedCell!.row + 1 {
+                rotateImage(tableView: tableView, indexPath: expandedCell!)
+                expandedCell = nil
+            } else if indexPath.row > expandedCell!.row + 1 {
+                rotateImage(tableView: tableView, indexPath: indexPath)
+                rotateImage(tableView: tableView, indexPath: expandedCell!)
+                expandedCell = IndexPath(row: indexPath.row - 1, section: 0)
             }
+            
+            
+//            if expandedCell == indexPath {
+//                rotateImage(tableView: tableView, indexPath: indexPath)
+//                expandedCell = nil
+//            } else if indexPath.row == expandedCell!.row + 1{
+//                //did nothing
+//            } else {
+//                rotateImage(tableView: tableView, indexPath: indexPath)
+//                rotateImage(tableView: tableView, indexPath: expandedCell!)
+//                expandedCell = indexPath
+//            }
         }
+        
+        tableView.reloadData()
         
     }
     
@@ -77,8 +117,14 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
         let imageView = cell?.viewWithTag(101) as! UIImageView
         UIView.animate(withDuration: 0.3 , delay: 0, options: .curveLinear, animations: {
             imageView.transform = imageView.transform.rotated(by: CGFloat(M_PI))
-            }, completion: { Void in
-                //
-        })
+            }, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if expandedCell == nil {
+            return 44
+        } else {
+            return indexPath.row == expandedCell!.row + 1 ? 267 : 44
+        }
     }
 }
