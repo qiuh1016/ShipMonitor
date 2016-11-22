@@ -1,0 +1,354 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B999AADB1DE2CE9400797FC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AADA1DE2CE9400797FC0 /* AppDelegate.swift */; };
+		B999AADD1DE2CE9400797FC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AADC1DE2CE9400797FC0 /* ViewController.swift */; };
+		B999AAE01DE2CE9400797FC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B999AADE1DE2CE9400797FC0 /* Main.storyboard */; };
+		B999AAE31DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B999AAE11DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld */; };
+		B999AAE51DE2CE9400797FC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B999AAE41DE2CE9400797FC0 /* Assets.xcassets */; };
+		B999AAE81DE2CE9400797FC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B999AAE61DE2CE9400797FC0 /* LaunchScreen.storyboard */; };
+		B999AAF01DE2D3F800797FC0 /* ShipMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAEF1DE2D3F800797FC0 /* ShipMapViewController.swift */; };
+		B999AAF21DE2D40600797FC0 /* ShipListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAF11DE2D40600797FC0 /* ShipListViewController.swift */; };
+		B999AAF51DE2D41700797FC0 /* ShipInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */; };
+		B999AAF71DE2D41E00797FC0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */; };
+		B999AAFA1DE2D5AF00797FC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B999AAF91DE2D5AF00797FC0 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B999AAD71DE2CE9400797FC0 /* ShipMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShipMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B999AADA1DE2CE9400797FC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B999AADC1DE2CE9400797FC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B999AADF1DE2CE9400797FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B999AAE21DE2CE9400797FC0 /* ShipMonitor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShipMonitor.xcdatamodel; sourceTree = "<group>"; };
+		B999AAE41DE2CE9400797FC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B999AAE71DE2CE9400797FC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B999AAE91DE2CE9400797FC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B999AAEF1DE2D3F800797FC0 /* ShipMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipMapViewController.swift; sourceTree = "<group>"; };
+		B999AAF11DE2D40600797FC0 /* ShipListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipListViewController.swift; sourceTree = "<group>"; };
+		B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipInfoViewController.swift; sourceTree = "<group>"; };
+		B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B999AAF91DE2D5AF00797FC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B999AAD41DE2CE9400797FC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B999AAFA1DE2D5AF00797FC0 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B999AACE1DE2CE9300797FC0 = {
+			isa = PBXGroup;
+			children = (
+				B999AAD91DE2CE9400797FC0 /* ShipMonitor */,
+				B999AAD81DE2CE9400797FC0 /* Products */,
+				B999AAF81DE2D5AF00797FC0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B999AAD81DE2CE9400797FC0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B999AAD71DE2CE9400797FC0 /* ShipMonitor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B999AAD91DE2CE9400797FC0 /* ShipMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				B999AADA1DE2CE9400797FC0 /* AppDelegate.swift */,
+				B999AADE1DE2CE9400797FC0 /* Main.storyboard */,
+				B999AADC1DE2CE9400797FC0 /* ViewController.swift */,
+				B999AAEF1DE2D3F800797FC0 /* ShipMapViewController.swift */,
+				B999AAF11DE2D40600797FC0 /* ShipListViewController.swift */,
+				B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */,
+				B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */,
+				B999AAE41DE2CE9400797FC0 /* Assets.xcassets */,
+				B999AAE61DE2CE9400797FC0 /* LaunchScreen.storyboard */,
+				B999AAE91DE2CE9400797FC0 /* Info.plist */,
+				B999AAE11DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld */,
+			);
+			path = ShipMonitor;
+			sourceTree = "<group>";
+		};
+		B999AAF81DE2D5AF00797FC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B999AAF91DE2D5AF00797FC0 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B999AAD61DE2CE9400797FC0 /* ShipMonitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B999AAEC1DE2CE9400797FC0 /* Build configuration list for PBXNativeTarget "ShipMonitor" */;
+			buildPhases = (
+				B999AAD31DE2CE9400797FC0 /* Sources */,
+				B999AAD41DE2CE9400797FC0 /* Frameworks */,
+				B999AAD51DE2CE9400797FC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShipMonitor;
+			productName = ShipMonitor;
+			productReference = B999AAD71DE2CE9400797FC0 /* ShipMonitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B999AACF1DE2CE9300797FC0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = CETCME;
+				TargetAttributes = {
+					B999AAD61DE2CE9400797FC0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = GN7256EV7F;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B999AAD21DE2CE9300797FC0 /* Build configuration list for PBXProject "ShipMonitor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B999AACE1DE2CE9300797FC0;
+			productRefGroup = B999AAD81DE2CE9400797FC0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B999AAD61DE2CE9400797FC0 /* ShipMonitor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B999AAD51DE2CE9400797FC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B999AAE81DE2CE9400797FC0 /* LaunchScreen.storyboard in Resources */,
+				B999AAE51DE2CE9400797FC0 /* Assets.xcassets in Resources */,
+				B999AAE01DE2CE9400797FC0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B999AAD31DE2CE9400797FC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B999AADD1DE2CE9400797FC0 /* ViewController.swift in Sources */,
+				B999AAE31DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld in Sources */,
+				B999AADB1DE2CE9400797FC0 /* AppDelegate.swift in Sources */,
+				B999AAF01DE2D3F800797FC0 /* ShipMapViewController.swift in Sources */,
+				B999AAF51DE2D41700797FC0 /* ShipInfoViewController.swift in Sources */,
+				B999AAF71DE2D41E00797FC0 /* SettingViewController.swift in Sources */,
+				B999AAF21DE2D40600797FC0 /* ShipListViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B999AADE1DE2CE9400797FC0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B999AADF1DE2CE9400797FC0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B999AAE61DE2CE9400797FC0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B999AAE71DE2CE9400797FC0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B999AAEA1DE2CE9400797FC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B999AAEB1DE2CE9400797FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B999AAED1DE2CE9400797FC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GN7256EV7F;
+				INFOPLIST_FILE = ShipMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CETCME.ShipMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B999AAEE1DE2CE9400797FC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GN7256EV7F;
+				INFOPLIST_FILE = ShipMonitor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CETCME.ShipMonitor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B999AAD21DE2CE9300797FC0 /* Build configuration list for PBXProject "ShipMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B999AAEA1DE2CE9400797FC0 /* Debug */,
+				B999AAEB1DE2CE9400797FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B999AAEC1DE2CE9400797FC0 /* Build configuration list for PBXNativeTarget "ShipMonitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B999AAED1DE2CE9400797FC0 /* Debug */,
+				B999AAEE1DE2CE9400797FC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B999AAE11DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B999AAE21DE2CE9400797FC0 /* ShipMonitor.xcdatamodel */,
+			);
+			currentVersion = B999AAE21DE2CE9400797FC0 /* ShipMonitor.xcdatamodel */;
+			path = ShipMonitor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B999AACF1DE2CE9300797FC0 /* Project object */;
+}
