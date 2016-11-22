@@ -1,72 +1,65 @@
 //
-//  ShipMapViewController.swift
+//  RouteViewController.swift
 //  ShipMonitor
 //
-//  Created by qiuhong on 21/11/2016.
+//  Created by qiuhong on 22/11/2016.
 //  Copyright © 2016 CETCME. All rights reserved.
 //
 
 import UIKit
 import MapKit
 
-class ShipMapViewController: UIViewController, MKMapViewDelegate {
-
-    @IBOutlet weak var searchButton: UIButton!
+class RouteViewController: UIViewController, MKMapViewDelegate {
+    
     @IBOutlet weak var mapView: MKMapView!
     
+    
+    let route = [
+        CLLocationCoordinate2D(latitude: 29.825507, longitude: 122.37926 ),
+        CLLocationCoordinate2D(latitude: 29.816571, longitude: 122.397113),
+        CLLocationCoordinate2D(latitude: 29.814784, longitude: 122.421832),
+        CLLocationCoordinate2D(latitude: 29.829081, longitude: 122.440371),
+        CLLocationCoordinate2D(latitude: 29.84159 , longitude: 122.459597),
+        CLLocationCoordinate2D(latitude: 29.853501, longitude: 122.46915 ),
+        CLLocationCoordinate2D(latitude: 29.867863, longitude: 122.472259),
+        CLLocationCoordinate2D(latitude: 29.881119, longitude: 122.484303)
+
+    ]
+    
+    var routeLine: MKPolyline?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initView()
+        // Do any additional setup after loading the view.
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func initView() {
-        searchButton.layer.cornerRadius = 18.5
-        //searchButton.layer.masksToBounds = true
         
-        mapView.showsUserLocation = true
-        let center = CLLocationCoordinate2D(latitude: 30, longitude: 122)
-        let span = MKCoordinateSpan(latitudeDelta: 4, longitudeDelta: 4)
+        let center = CLLocationCoordinate2D(latitude: 29.84159, longitude: 122.409472)
+        let span = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
         let region = MKCoordinateRegion(center: center, span: span)
         mapView.setRegion(region, animated: true)
         
         
+        for coor in route {
+            let ship = Ship()
+            ship.name = "11-22 12:18:01"
+            ship.number = ""
+            ship.coor = coor
+            setAnnotation(ship, type: .point)
+        }
         
-        let ship1 = Ship()
-        ship1.name = "ACACIA"
-        ship1.number = "371044000"
-        ship1.coor = center
-        setAnnotation(ship1, type: .point)
         
-        let ship2 = Ship()
-        ship2.name = "ACACIA_1"
-        ship2.number = "371044000_1"
-        ship2.coor = CLLocationCoordinate2D(latitude: 30.1, longitude: 122.4)
-        setAnnotation(ship2, type: .point)
-        
-        let ship3 = Ship()
-        ship3.name = "ACACIA_2"
-        ship3.number = "371044000_2"
-        ship3.coor = CLLocationCoordinate2D(latitude: 29.5, longitude: 121.6)
-        setAnnotation(ship3, type: .point)
-        
+        drawRouteLine(route: route)
     }
     
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation.isKind(of: MyAnnotation.self) {
             var view = mapView.dequeueReusableAnnotationView(withIdentifier: "point");
@@ -78,9 +71,9 @@ class ShipMapViewController: UIViewController, MKMapViewDelegate {
             case .end:
                 view?.image = UIImage(named: "map_icon_end");
             case .point:
-                view?.image = UIImage(named: "map_icon_point");
+                view?.image = UIImage(named: "routePoint_blue");
             }
-            view?.centerOffset = CGPoint(x: 0, y: -(view!.frame.size.height * 0.5));
+            //view?.centerOffset = CGPoint(x: 0, y: -(view!.frame.size.height * 0.5));
             view?.canShowCallout = true;
             return view
         }
@@ -88,7 +81,17 @@ class ShipMapViewController: UIViewController, MKMapViewDelegate {
         return nil
     }
     
-
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+            let polylineRenderer = MKPolylineRenderer(polyline: routeLine!)
+            polylineRenderer.strokeColor = UIColor.blue
+            polylineRenderer.lineWidth = 1
+            return polylineRenderer
+       
+    }
+    
+    
+    
     func setAnnotation(_ ship: Ship, type: MyAnnotationType) {
         let annotation = MyAnnotation()
         annotation.title = ship.name
@@ -96,8 +99,14 @@ class ShipMapViewController: UIViewController, MKMapViewDelegate {
         annotation.type = type
         annotation.coordinate = ship.coor
         mapView.addAnnotation(annotation)
-//        anntations.append(annotation)
+        
     }
+    
+    func drawRouteLine(route: [CLLocationCoordinate2D]) {
+        routeLine = MKPolyline(coordinates: route, count: route.count)
+        mapView.add(routeLine!)
+    }
+
     
     /*
     // MARK: - Navigation

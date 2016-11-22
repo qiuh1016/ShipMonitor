@@ -13,13 +13,20 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    let infoName = ["基本信息", "船舶尺寸", "船舶容积", "管理信息"]
+    let infoNameCN = ["基本信息", "船舶尺寸", "船舶容积", "管理信息"]
+    let infoName = ["BASIC INFO", "SIZE", "VOLUME", "MANAGE INFO"]
     var expandedCell: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        // Do any additional setup after loading the view.
+
+        if tableView.responds(to: #selector(setter: UIView.layoutMargins)){
+            tableView.layoutMargins = UIEdgeInsets.zero
+        }
+        if tableView.responds(to: #selector(setter: UITableViewCell.separatorInset)){
+            tableView.separatorInset = UIEdgeInsets.zero
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +73,16 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
             } else {
                 //info cell
                 let cell = tableView.dequeueReusableCell(withIdentifier: "basicInfoCell")
+                (cell?.viewWithTag(100) as! UILabel).text = "ACACIA"
+                (cell?.viewWithTag(101) as! UILabel).text = "371044000"
+                (cell?.viewWithTag(102) as! UILabel).text = "3FAM2"
+                (cell?.viewWithTag(103) as! UILabel).text = "9476599"
+                (cell?.viewWithTag(104) as! UILabel).text = "Pamaa"
+                (cell?.viewWithTag(105) as! UILabel).text = "oil and chemical tanker"
+                (cell?.viewWithTag(106) as! UILabel).text = "STEEL"
+                (cell?.viewWithTag(107) as! UILabel).text = "PANAMA"
+                (cell?.viewWithTag(108) as! UILabel).text = "14.0kn"
+                (cell?.viewWithTag(109) as! UILabel).text = "30/08/2010"
                 return cell!
             }
         }
@@ -78,37 +95,31 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
         if expandedCell == nil {
             rotateImage(tableView: tableView, indexPath: indexPath)
             expandedCell = indexPath
+            tableView.insertRows(at: [IndexPath(row: indexPath.row + 1, section: 0)], with: .fade)
         } else {
+            
+            // MARK: TODO 展开动画
             if indexPath.row < expandedCell!.row {
                 rotateImage(tableView: tableView, indexPath: indexPath)
                 rotateImage(tableView: tableView, indexPath: expandedCell!)
                 expandedCell = indexPath
+                tableView.reloadData()
             } else if indexPath.row == expandedCell!.row {
                 rotateImage(tableView: tableView, indexPath: expandedCell!)
                 expandedCell = nil
+                tableView.deleteRows(at: [IndexPath(row: indexPath.row + 1, section: 0)], with: .fade)
             } else if indexPath.row == expandedCell!.row + 1 {
                 rotateImage(tableView: tableView, indexPath: expandedCell!)
                 expandedCell = nil
+                tableView.deleteRows(at: [indexPath], with: .fade)
             } else if indexPath.row > expandedCell!.row + 1 {
                 rotateImage(tableView: tableView, indexPath: indexPath)
                 rotateImage(tableView: tableView, indexPath: expandedCell!)
                 expandedCell = IndexPath(row: indexPath.row - 1, section: 0)
+                tableView.reloadData()
             }
-            
-            
-//            if expandedCell == indexPath {
-//                rotateImage(tableView: tableView, indexPath: indexPath)
-//                expandedCell = nil
-//            } else if indexPath.row == expandedCell!.row + 1{
-//                //did nothing
-//            } else {
-//                rotateImage(tableView: tableView, indexPath: indexPath)
-//                rotateImage(tableView: tableView, indexPath: expandedCell!)
-//                expandedCell = indexPath
-//            }
         }
         
-        tableView.reloadData()
         
     }
     
@@ -127,4 +138,14 @@ class ShipInfoViewController: UIViewController, UITableViewDelegate, UITableView
             return indexPath.row == expandedCell!.row + 1 ? 267 : 44
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if cell.responds(to: #selector(setter: UIView.layoutMargins)){
+            cell.layoutMargins = UIEdgeInsets.zero
+        }
+        if cell.responds(to: #selector(setter: UITableViewCell.separatorInset)){
+            cell.separatorInset = UIEdgeInsets.zero
+        }
+    }
+    
 }

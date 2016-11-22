@@ -18,6 +18,11 @@
 		B999AAF51DE2D41700797FC0 /* ShipInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */; };
 		B999AAF71DE2D41E00797FC0 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */; };
 		B999AAFA1DE2D5AF00797FC0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B999AAF91DE2D5AF00797FC0 /* MapKit.framework */; };
+		B999AAFC1DE3E0D600797FC0 /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAFB1DE3E0D600797FC0 /* MyAnnotation.swift */; };
+		B999AAFE1DE3E13900797FC0 /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAFD1DE3E13900797FC0 /* Ship.swift */; };
+		B999AB001DE3E7B300797FC0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AAFF1DE3E7B300797FC0 /* SearchViewController.swift */; };
+		B999AB021DE3EA8700797FC0 /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AB011DE3EA8700797FC0 /* FunctionViewController.swift */; };
+		B999AB041DE3ED8F00797FC0 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B999AB031DE3ED8F00797FC0 /* RouteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +39,11 @@
 		B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShipInfoViewController.swift; sourceTree = "<group>"; };
 		B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B999AAF91DE2D5AF00797FC0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B999AAFB1DE3E0D600797FC0 /* MyAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
+		B999AAFD1DE3E13900797FC0 /* Ship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
+		B999AAFF1DE3E7B300797FC0 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B999AB011DE3EA8700797FC0 /* FunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		B999AB031DE3ED8F00797FC0 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +80,13 @@
 			children = (
 				B999AADA1DE2CE9400797FC0 /* AppDelegate.swift */,
 				B999AADE1DE2CE9400797FC0 /* Main.storyboard */,
+				B999AAFD1DE3E13900797FC0 /* Ship.swift */,
+				B999AAFB1DE3E0D600797FC0 /* MyAnnotation.swift */,
 				B999AADC1DE2CE9400797FC0 /* ViewController.swift */,
 				B999AAEF1DE2D3F800797FC0 /* ShipMapViewController.swift */,
+				B999AAFF1DE3E7B300797FC0 /* SearchViewController.swift */,
+				B999AB031DE3ED8F00797FC0 /* RouteViewController.swift */,
+				B999AB011DE3EA8700797FC0 /* FunctionViewController.swift */,
 				B999AAF11DE2D40600797FC0 /* ShipListViewController.swift */,
 				B999AAF41DE2D41700797FC0 /* ShipInfoViewController.swift */,
 				B999AAF61DE2D41E00797FC0 /* SettingViewController.swift */,
@@ -164,12 +179,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B999AB001DE3E7B300797FC0 /* SearchViewController.swift in Sources */,
 				B999AADD1DE2CE9400797FC0 /* ViewController.swift in Sources */,
+				B999AB041DE3ED8F00797FC0 /* RouteViewController.swift in Sources */,
 				B999AAE31DE2CE9400797FC0 /* ShipMonitor.xcdatamodeld in Sources */,
 				B999AADB1DE2CE9400797FC0 /* AppDelegate.swift in Sources */,
 				B999AAF01DE2D3F800797FC0 /* ShipMapViewController.swift in Sources */,
+				B999AAFE1DE3E13900797FC0 /* Ship.swift in Sources */,
 				B999AAF51DE2D41700797FC0 /* ShipInfoViewController.swift in Sources */,
 				B999AAF71DE2D41E00797FC0 /* SettingViewController.swift in Sources */,
+				B999AB021DE3EA8700797FC0 /* FunctionViewController.swift in Sources */,
+				B999AAFC1DE3E0D600797FC0 /* MyAnnotation.swift in Sources */,
 				B999AAF21DE2D40600797FC0 /* ShipListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
